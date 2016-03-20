@@ -17,6 +17,7 @@ synopsis    'test [OPTIONS]'
 description 'This Script is simply used to show off how the `fish-n-chips` library is used'
 
 argument    '-h | --help          Show this help'
+argument    '-v | --verbose       Print more information'
 argument    '-V | --version       Print version information'
 argument    '--data [toBePrinted] Data to print instead of `stdout`'
 
@@ -38,7 +39,11 @@ run "Failing" printSomething 1
 ```
 
 **Output**
-![Sample Output](sample.gif)
+![Sample Help](img/help.png)
+![Sample Output](img/output.png)
+![Sample Verbose](img/verbose.png)
+![Sample Version](img/version.png)
+
 
 ## Installation
 I suggest installing this library as a git submodule:
