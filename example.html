@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+
+	<base href="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/deps/normalize.css">
+	<link rel="stylesheet" href="css/deps/cayman.css">
+	<link rel="stylesheet" href="css/highlight.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/docs.css">
+
+	<script src="js/collapse.js"></script>
+	<script src="js/reload.js"></script>
+</head>
+<body class="collapsed">
+	<div class="page-wrap">
+		<section class="page-header placeholder">
+			<div><h1 class="project-name">fish-n-chips</h1></div>
+<h2 class="project-tagline">A utility library to write fish shell scripts.</h2>
+<nav class="main-menu">
+	<ul>
+		<li><a href="./" >Introduction</a></li>
+		<li><a href="api/argument-handling" >API</a></li>
+
+			<li><a href="example.html" class="active">Example</a></li>
+	</ul>
+</nav>
+		</section>
+		<section class="page-header">
+			<div><h1 class="project-name">fish-n-chips</h1></div>
+<h2 class="project-tagline">A utility library to write fish shell scripts.</h2>
+<nav class="main-menu">
+	<ul>
+		<li><a href="./" >Introduction</a></li>
+		<li><a href="api/argument-handling" >API</a></li>
+
+			<li><a href="example.html" class="active">Example</a></li>
+	</ul>
+</nav>
+		</section>
+		<div class="main-column">
+						<section class="main-content">
+				<h1>Example</h1>
+<p>The following sample can also be found <a href="https://github.com/PaulAvery/fish-n-chips/blob/master/sample/sample.fish">here</a>.</p>
+<pre class="editor editor-colors"><div class="line"><span class="source fish"><span class="comment line number-sign fish"><span class="punctuation definition comment fish"><span>#</span></span><span>!/usr/bin/fish</span></span></span></div><div class="line"><span class="source fish"><span class="support function builtin fish"><span>set</span></span><span>&nbsp;chipsPwd&nbsp;(</span><span class="support function unix fish"><span>dirname</span></span><span>&nbsp;(realpath&nbsp;(</span><span class="support function builtin fish"><span>status</span></span><span>&nbsp;</span><span class="string other option fish"><span>-f</span></span><span>)))</span></span></div><div class="line"><span class="source fish"><span class="support function builtin fish"><span>source</span></span><span>&nbsp;</span><span class="variable other normal fish"><span class="punctuation definition variable fish"><span>$</span></span><span>chipsPwd</span></span><span>/../chips.fish&nbsp;</span><span class="variable other fixed fish"><span class="punctuation definition variable fish"><span>$</span></span><span>argv</span></span><span>;&nbsp;</span><span class="support function builtin fish"><span>or</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span><span>&nbsp;</span><span class="variable other fixed fish"><span class="punctuation definition variable fish"><span>$</span></span><span>status</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span class="comment line number-sign fish"><span class="punctuation definition comment fish"><span>#</span></span><span>&nbsp;Define&nbsp;our&nbsp;application</span></span></span></div><div class="line"><span class="source fish"><span>name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sample</span></span></div><div class="line"><span class="source fish"><span>version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0.0</span></span></div><div class="line"><span class="source fish"><span>author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Florian&nbsp;Albertz</span></span></div><div class="line"><span class="source fish"><span>copyright&nbsp;&nbsp;&nbsp;2016</span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>Script&nbsp;to&nbsp;show&nbsp;the&nbsp;usage&nbsp;of&nbsp;the&nbsp;fish-n-chips&nbsp;library</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>synopsis&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>test&nbsp;[OPTIONS]</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>description&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>This&nbsp;Script&nbsp;is&nbsp;simply&nbsp;used&nbsp;to&nbsp;show&nbsp;off&nbsp;how&nbsp;the&nbsp;`fish-n-chips`&nbsp;library&nbsp;is&nbsp;used</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-h&nbsp;|&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;this&nbsp;help</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-V&nbsp;|&nbsp;--version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;version&nbsp;information</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-v&nbsp;|&nbsp;--verbose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;more&nbsp;output</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-m&nbsp;|&nbsp;--manual&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;a&nbsp;man&nbsp;page</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-d&nbsp;|&nbsp;--markdown&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;a&nbsp;markdown&nbsp;manual</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>--data&nbsp;[toBePrinted]&nbsp;Data&nbsp;to&nbsp;print&nbsp;instead&nbsp;of&nbsp;`stdout`</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-h</span></span><span>&nbsp;</span><span class="support function script fish"><span>help</span></span><span>;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-V</span></span><span>&nbsp;printVersion;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-m</span></span><span>&nbsp;manual;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-d</span></span><span>&nbsp;markdownManual;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span class="keyword control fish"><span>if</span></span><span>&nbsp;arg</span><span>&nbsp;</span><span class="string other option fish"><span>-v</span></span></span></div><div class="line"><span class="source fish"><span>	</span><span class="support function builtin fish"><span>set</span></span><span>&nbsp;chipsVerbose&nbsp;</span><span class="support function unix fish"><span>true</span></span></span></div><div class="line"><span class="source fish"><span class="keyword control fish"><span>end</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span class="keyword control fish"><span>function</span></span><span>&nbsp;printSomething</span></span></div><div class="line"><span class="source fish"><span>	</span><span class="support function unix fish"><span>echo</span></span><span>&nbsp;(stern&nbsp;(arg</span><span>&nbsp;</span><span class="string other option fish"><span>--data</span></span><span>)&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>stdout</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span><span>)</span></span></div><div class="line"><span class="source fish"><span>	error&nbsp;stderr</span></span></div><div class="line"><span class="source fish"><span>	</span><span class="support function builtin fish"><span>return</span></span><span>&nbsp;</span><span class="variable other fixed fish"><span class="punctuation definition variable fish"><span>$</span></span><span>argv</span></span><span>[1]</span></span></div><div class="line"><span class="source fish"><span class="keyword control fish"><span>end</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>run&nbsp;</span><span class="string quoted double fish"><span class="punctuation definition string begin fish"><span>&quot;</span></span><span>Succeeding</span><span class="punctuation definition string end fish"><span>&quot;</span></span></span><span>&nbsp;printSomething&nbsp;0</span></span></div><div class="line"><span class="source fish"><span>run&nbsp;</span><span class="string quoted double fish"><span class="punctuation definition string begin fish"><span>&quot;</span></span><span>Failing</span><span class="punctuation definition string end fish"><span>&quot;</span></span></span><span>&nbsp;printSomething&nbsp;1</span></span></div></pre>
+
+			</section>
+		</div>
+	</div>
+	<footer class="site-footer">
+		<div>
+	<span class="site-footer-owner"><a href="https://github.com/PaulAvery/fish-n-chips/">fish-n-chips</a> is maintained by <a href="https://github.com/PaulAvery/">Florian Albertz</a>.</span>
+	<span class="site-footer-credits">This page uses a modified version of the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+</div>
+	</footer>
+</body>
+</html>

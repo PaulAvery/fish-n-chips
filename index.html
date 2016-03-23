@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>fish-n-chips</title>
+
+	<base href="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/deps/normalize.css">
+	<link rel="stylesheet" href="css/deps/cayman.css">
+	<link rel="stylesheet" href="css/highlight.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/docs.css">
+
+	<script src="js/collapse.js"></script>
+	<script src="js/reload.js"></script>
+</head>
+<body class="collapsed">
+	<div class="page-wrap">
+		<section class="page-header placeholder">
+			<div><h1 class="project-name">fish-n-chips</h1></div>
+<h2 class="project-tagline">A utility library to write fish shell scripts.</h2>
+<nav class="main-menu">
+	<ul>
+		<li><a href="./" class="active">Introduction</a></li>
+		<li><a href="api/argument-handling" >API</a></li>
+
+			<li><a href="example.html" >Example</a></li>
+	</ul>
+</nav>
+		</section>
+		<section class="page-header">
+			<div><h1 class="project-name">fish-n-chips</h1></div>
+<h2 class="project-tagline">A utility library to write fish shell scripts.</h2>
+<nav class="main-menu">
+	<ul>
+		<li><a href="./" class="active">Introduction</a></li>
+		<li><a href="api/argument-handling" >API</a></li>
+
+			<li><a href="example.html" >Example</a></li>
+	</ul>
+</nav>
+		</section>
+		<div class="main-column">
+						<section class="main-content">
+				<h1>Introduction</h1>
+<p><em>fish-n-chips</em> is a small utility library to write fish shell scripts.<br>
+It handles argument parsing as well as help- and manpage generation and brings with it some tools to structure your script.</p>
+<h2>Quick Start</h2>
+<pre class="editor editor-colors"><div class="line"><span class="source fish"><span class="comment line number-sign fish"><span class="punctuation definition comment fish"><span>#</span></span><span>!/usr/bin/fish</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span class="support function builtin fish"><span>set</span></span><span>&nbsp;chipsPwd&nbsp;(</span><span class="support function unix fish"><span>dirname</span></span><span>&nbsp;(realpath&nbsp;(</span><span class="support function builtin fish"><span>status</span></span><span>&nbsp;</span><span class="string other option fish"><span>-f</span></span><span>)))</span></span></div><div class="line"><span class="source fish"><span class="support function builtin fish"><span>source</span></span><span>&nbsp;</span><span class="variable other normal fish"><span class="punctuation definition variable fish"><span>$</span></span><span>chipsPwd</span></span><span>/chips/chips.fish&nbsp;</span><span class="variable other fixed fish"><span class="punctuation definition variable fish"><span>$</span></span><span>argv</span></span><span>;&nbsp;</span><span class="support function builtin fish"><span>or</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span><span>&nbsp;</span><span class="variable other fixed fish"><span class="punctuation definition variable fish"><span>$</span></span><span>status</span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sample</span></span></div><div class="line"><span class="source fish"><span>version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0.0</span></span></div><div class="line"><span class="source fish"><span>author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Florian&nbsp;Albertz</span></span></div><div class="line"><span class="source fish"><span>copyright&nbsp;&nbsp;&nbsp;2016</span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>Script&nbsp;to&nbsp;show&nbsp;the&nbsp;usage&nbsp;of&nbsp;the&nbsp;fish-n-chips&nbsp;library</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>synopsis&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>test&nbsp;[OPTIONS]</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>description&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>This&nbsp;Script&nbsp;is&nbsp;simply&nbsp;used&nbsp;to&nbsp;show&nbsp;off&nbsp;how&nbsp;the&nbsp;`fish-n-chips`&nbsp;library&nbsp;is&nbsp;used</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-h&nbsp;|&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;this&nbsp;help</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>argument&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single fish"><span class="punctuation definition string begin fish"><span>&#39;</span></span><span>-V&nbsp;|&nbsp;--version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;version&nbsp;information</span><span class="punctuation definition string end fish"><span>&#39;</span></span></span></span></div><div class="line"><span class="source fish"><span>&nbsp;</span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-h</span></span><span>&nbsp;</span><span class="support function script fish"><span>help</span></span><span>;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div><div class="line"><span class="source fish"><span>arg</span><span>&nbsp;</span><span class="string other option fish"><span>-V</span></span><span>&nbsp;printVersion;&nbsp;</span><span class="support function builtin fish"><span>and</span></span><span>&nbsp;</span><span class="support function builtin fish"><span>exit</span></span></span></div></pre>
+<h2>Installation</h2>
+<p>I suggest installing this library as a git submodule:</p>
+<pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>git&nbsp;submodule&nbsp;add&nbsp;git@github.com:PaulAvery/fish-n-chips.git&nbsp;chips</span></span></div></pre>
+<p>You can obviously install it differently as well. The only important part is, that you execute the following at the top of your script:</p>
+<pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>set&nbsp;chipsPwd&nbsp;(dirname&nbsp;(realpath&nbsp;(status&nbsp;-f)))</span></span></div><div class="line"><span class="text plain null-grammar"><span>source&nbsp;$chipsPwd/chips/chips.fish&nbsp;$argv;&nbsp;or&nbsp;exit&nbsp;$status</span></span></div></pre>
+<p>We set the <code>chipsPwd</code> variable so the library knows where to find things like our <em>ReadMe.md</em>. Then we source the entry file <em>chips.fish</em> and pass it all our arguments. The <code>; or exit $status</code> is simply used, so our script aborts if the library encounters an error.</p>
+
+			</section>
+		</div>
+	</div>
+	<footer class="site-footer">
+		<div>
+	<span class="site-footer-owner"><a href="https://github.com/PaulAvery/fish-n-chips/">fish-n-chips</a> is maintained by <a href="https://github.com/PaulAvery/">Florian Albertz</a>.</span>
+	<span class="site-footer-credits">This page uses a modified version of the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+</div>
+	</footer>
+</body>
+</html>
