@@ -1,0 +1,21 @@
+{
+  "name": "fish-n-chips",
+  "description": "A utility library to write fish shell scripts.",
+  "author": {
+    "name": "Florian Albertz",
+    "url": "https://github.com/PaulAvery/"
+  },
+  "homepage": "https://github.com/PaulAvery/fish-n-chips/",
+  "license": "BSD-3-Clause",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "highlights": "^1.3.1",
+    "language-fish-shell": "git+https://github.com/davidcelis/language-fish-shell.git",
+    "markdown-it": "^6.0.0",
+    "recursive-copy": "^2.0.3",
+    "slug": "^0.9.1",
+    "static-server": "^2.0.2"
+  }
+}
