@@ -6,7 +6,7 @@ function parseArgument
 	set -l paramRegex '\[(\S*)\]'
 	set -l descriptionRegex '(.+)'
 
-	set -l flagRegex '(?:'$shortRegex' \| '$longRegex' )|'$shortRegex' |'$longRegex' '
+	set -l flagRegex '(?:'$shortRegex' *\| *'$longRegex' )|'$shortRegex' |'$longRegex' '
 	set -l fullRegex '(?:'$flagRegex')(?:'$paramRegex' )?'$descriptionRegex
 
 	set -l param
