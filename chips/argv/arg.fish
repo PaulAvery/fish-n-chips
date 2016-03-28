@@ -1,13 +1,3 @@
-set chipsArguments
-
-function argument
-	if test $chipsValidatedArguments = true
-		abort "Calling 'argument' after 'arg' is not allowed."
-	else
-		set chipsArguments $chipsArguments "$argv"
-	end
-end
-
 function arg
 	set -l arg $argv[1]
 

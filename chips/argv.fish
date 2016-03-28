@@ -1,3 +1,4 @@
+set chipsArguments
 set chipsValidatedArguments false
 
 for chip in $chipsRoot/chips/argv/*.fish
