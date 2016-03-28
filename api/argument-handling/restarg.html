@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>sexec</title>
+	<title>restArg</title>
 
 	<base href="../../">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,6 +58,10 @@
 						<li class="page child ">
 							<div class="dot"></div>
 							<a href="api/argument-handling/argument.html">argument</a>
+						</li>
+						<li class="page child active">
+							<div class="dot"></div>
+							<a href="api/argument-handling/restarg.html">restArg</a>
 						</li>
 				<li class="category ">
 					<div class="dot"></div>
@@ -143,10 +147,6 @@
 							<div class="dot"></div>
 							<a href="api/utilities/recho.html">recho</a>
 						</li>
-						<li class="page child active">
-							<div class="dot"></div>
-							<a href="api/utilities/sexec.html">sexec</a>
-						</li>
 						<li class="page child ">
 							<div class="dot"></div>
 							<a href="api/utilities/stern.html">stern</a>
@@ -159,10 +159,10 @@
 		</ul>
 	</nav>
 			<section class="main-content">
-				<h1>sexec</h1>
-<p>Executes a script and returns the previous <code>$status</code>. Useful in pipes if you only care about an earlier commands status:</p>
-<pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>eval&nbsp;false&nbsp;|&nbsp;sexec&nbsp;true</span></span></div></pre>
-<p>The <code>eval</code> seems to be neccessary, because it terminates before sexec runs. Or something like that.</p>
+				<h1>restArg</h1>
+<p>Retrieves the nth non-option argument (indexed from 1).<br>
+Return value is 1 if the number of rest Arguments is smaller then the one queried.</p>
+<pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>restArg&nbsp;1</span></span></div></pre>
 
 			</section>
 		</div>
