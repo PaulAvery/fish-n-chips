@@ -5,11 +5,10 @@ function runVerbose
 	set -l success
 
 	recho $chipsLoad $action
+
 	recho
-	begin
-		eval $cmd | sexec awk '$0="\t"$0'
-		set success $status
-	end ^| awk '$0="\t"$0' >&2
+	eval $cmd
+	set success $status
 	recho
 
 	if test $success = 0
