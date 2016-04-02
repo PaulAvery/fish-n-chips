@@ -1,4 +1,4 @@
 function help
 	recho
-	man -l (manual $argv | psub) | tail -n +4 | head -n -1
+	man --pager="fish -c 'ul | tail -n +4 | head -n -1'" -l (markdownManual $argv | sed 's/\(^## .*$\)/#\1/g' | ronn -r | psub)
 end
