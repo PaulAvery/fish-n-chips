@@ -1,13 +1,13 @@
 function parseArgument
 	set -l argument $argv[1]
 
-	set -l longRegex '--([^-\s]+)'
-	set -l shortRegex '-([^-\s])'
-	set -l paramRegex '\[(\S*)\]'
+	set -l longRegex '--([^-\s]+) *'
+	set -l shortRegex '-([^-\s]) *'
+	set -l paramRegex '\[(\S*)\] *'
 	set -l descriptionRegex '(.+)'
 
-	set -l flagRegex '(?:'$shortRegex' *\| *'$longRegex' )|'$shortRegex' |'$longRegex' '
-	set -l fullRegex '(?:'$flagRegex')(?:'$paramRegex' )?'$descriptionRegex
+	set -l flagRegex '(?:'$shortRegex'\| *'$longRegex')|'$shortRegex'|'$longRegex
+	set -l fullRegex '(?:'$flagRegex')(?:'$paramRegex')?'$descriptionRegex
 
 	set -l param
 	set -l longFlag
