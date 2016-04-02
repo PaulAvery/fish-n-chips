@@ -1,22 +1,10 @@
 function restArg
 	set -l pos $argv[1]
-	set -l current 1
-	set -l doubleDashed false
+	set args (restArgs)
 
-	for arg in $chipsArgv
-		if test $current = $pos
-			if test $doubleDashed = true -o (string sub -l 1 -- $arg) != '-'
-				echo $arg
-				return 0
-			end
-		end
-
-		if test $doubleDashed = true -o (string sub -l 1 -- $arg) != '-'
-			set current (math $current + 1)
-		else if test $arg = '--'
-			set doubleDashed true
-		end
+	if test (count $args) -lt $pos
+		return 1
+	else
+		recho $args[$pos]
 	end
-
-	return 1
 end
